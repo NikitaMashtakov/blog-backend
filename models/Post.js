@@ -16,10 +16,10 @@ const PostSchema = mongoose.Schema(
       },
     },
     content: {
-      type: Number,
+      type: String,
       required: true,
     },
-    author: [
+    comments: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Comment",

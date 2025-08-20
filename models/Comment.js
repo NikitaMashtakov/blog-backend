@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const CommentSchema = mongoose.Schema(
   {
     content: {
-      type: Number,
+      type: String,
       required: true,
     },
     author: {

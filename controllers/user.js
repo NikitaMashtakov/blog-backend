@@ -38,7 +38,7 @@ async function login(login, password) {
 }
 
 function getUsers() {
-  return User.find;
+  return User.find();
 }
 
 function getRoles() {
@@ -56,7 +56,8 @@ function deleteUser(id) {
 // edit role
 
 function updateUser(id, userData) {
-  return User.findByIdAndUpdate(id, userData, { returnDocument: "auto" });
+  console.log("userdata", userData);
+  return User.findByIdAndUpdate(id, userData, { returnDocument: "after" });
 }
 
 module.exports = {
