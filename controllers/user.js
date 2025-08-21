@@ -12,11 +12,11 @@ async function register(login, password) {
   const passwordHash = await bcrypt.hash(password, 10);
 
   const user = await User.create({ login, password: passwordHash });
+
   const token = generate({ id: user.id });
 
   return { user, token };
 }
-
 //login
 
 async function login(login, password) {
@@ -34,7 +34,7 @@ async function login(login, password) {
 
   const token = generate({ id: user.id });
 
-  return { token, user };
+  return { user, token };
 }
 
 function getUsers() {
